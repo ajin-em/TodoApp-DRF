@@ -17,11 +17,17 @@ from dotenv import load_dotenv
 
 
 
-load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+DOT_ENV_FILE = os.path.join(BASE_DIR, ".env")
+
+
+if os.path.isfile(DOT_ENV_FILE):
+
+    load_dotenv()
 
 
 # Quick-start development settings - unsuitable for production
